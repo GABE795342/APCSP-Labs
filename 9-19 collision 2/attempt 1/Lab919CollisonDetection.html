@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab919CollisonDetection</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* Solarized (Light) */
+/* Authors: Ethan Schoonover: http://ethanschoonover.com/solarized, CodeCatalyst: http://codecatalyst.com/ */
+/* Version: d9a83f4e7a47432baff86e1e7946d9e066cf3d1b (modified) */
+/* https://github.com/CodeCatalyst/mou-theme-solarized */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ol,
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html * {
+  font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  color-profile: sRGB;
+}
+body {
+  min-width: 32em;
+  max-width: 52em;
+  margin: 10px;
+}
+p {
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+strong {
+  font-weight: bold;
+}
+ol,
+ul {
+  margin-left: 2em;
+  margin-bottom: 20px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h2 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h3 {
+  font-size: 23.44px;
+  line-height: 28.128px;
+}
+h4 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h5 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h6 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+img {
+  margin-bottom: 20px;
+}
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img,
+p img {
+  margin-bottom: 0;
+}
+pre {
+  margin-bottom: 20px;
+}
+pre,
+code {
+  
+  font-family: monospace;
+  font-size: 20px;
+  
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+h2 {
+  border-bottom: 1px solid;
+}
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: none;
+}
+html * {
+  color: #657b83;
+}
+html body {
+  background-color: #fdf6e3;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #586e75;
+  border-color: #657b83;
+}
+html a,
+html a:active,
+html a:visited {
+  color: #586e75;
+}
+html a:hover {
+  background-color: #eee8d5;
+}
+html pre {
+  color: #586e75;
+  background-color: #eee8d5;
+}
+html a,
+html a:active,
+html a:visited,
+html code.url {
+  color: #b58900;
+}
+html h1 {
+  color: #b58900;
+}
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #b58900;
+}
+
+/*
+LICENSE
+
+Solarized Theme for Mou
+
+Copyright (c) 2012 CodeCatalyst, LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Solarized
+
+Copyright (c) 2011 Ethan Schoonover
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+</style>
+</head>
+<body>
+<h1>Lab 919::Collision Detection</h1>
+<h3>Objectives</h3>
+<ul>
+<li>Remember <strong>Radians</strong></li>
+<li>Use <strong>save()</strong> and <strong>restore()</strong> with transformations</li>
+<li>Use the p5 function <strong>lerp()</strong></li>
+<li>Make a <strong>boid constructor function</strong></li>
+<li>Use the Vector method <strong>dist()</strong> to check for collision</li>
+<li><strong>Splice</strong> boids out of the boids array</li>
+</ul>
+<h2>Part I: Radians and degrees</h2>
+<ul>
+<li>Most Math functions will take in and return radian values rather than degree values.  Radians determin the measure of an angle in terms of PI (3.14159...)</li>
+</ul>
+<p><img src="trig2.png" /></p>
+<h2>Part II: Save and Restore</h2>
+<ul>
+<li>There are three transformations we will be using in p5.js: <strong>translate</strong>, <strong>rotate</strong> and <strong>scale</strong></li>
+<li>
+<p>Whenever we rotate in JavaScript, we ALWAYS rotate around the origin (upper left corner by default).  However this is most often not what we want.  The good news is we can use translate to move the origin to any location and rotate around that location.  In order to do this, we need to save the current coordinate system and then restore it after we are done. p5 has two functions that help us accomplish this:  <strong>push()</strong> and <strong>pop()</strong></p>
+<pre><code>push() // push or save the current coord system into the stack
+    translate(this.loc.x, this.loc.y);
+    rotate(someAngle);
+    triangle(-5, 0, 5, 0, 0, -15);
+pop()  //  pop or restore the coordianate system from the stack
+</code></pre>
+
+</li>
+</ul>
+<h2>Part III: Lerp your mouse</h2>
+<ul>
+<li>Lerp is short for linear interpolation.  Essentially it moves one thing toward another in a way the is prettier</li>
+<li>
+<p><strong>Description:</strong> Lerp calculates a number between two numbers at a specific increment. The amt parameter is the amount to interpolate between the two values: start and stop</p>
+</li>
+<li>
+<p><strong>Syntax</strong></p>
+<pre><code>    lerp(start, stop, amt)
+</code></pre>
+
+</li>
+<li>
+<p>We can use this with the our <strong>ball</strong> location and the location of the <strong>mouse</strong> as our start and stop positions.  <strong>mouseX</strong> and <strong>mouseY</strong> are <strong>p5</strong> values that give the location of the mouse at any moment during the run of the program.  First create a vector for the location of the mouse, then lerp between the ball location and the mouse location</p>
+<pre><code>var mouseLoc = createVector(mouseX, mouseY);
+this.loc = p5.Vector.lerp(this.loc, mouseLoc, .09)
+</code></pre>
+
+</li>
+</ul>
+<h2>Part IV: create a Boid class</h2>
+<ul>
+<li>Make a boid class:  A <strong>boid</strong> object is a triangle that will attempt to flee from a <strong>chaser</strong> object </li>
+<li>Decide what properties and methods the boid objects will need and write these into the boid <strong>constructor function</strong>.</li>
+<li>Make a <strong>boids array</strong> and fill it with as many boids as you like</li>
+<li>Create a Ball object named <strong>chaser</strong>.</li>
+</ul>
+<h2>Part V: Check for collsion</h2>
+<ul>
+<li>Collision detection is an important part of many games.  We will use collision detection to decide when to remove a boid from the array of boids</li>
+<li>
+<p>Each Vector has many functions.  One of these is <strong>dist()</strong>.  This method will return the distance between two vector objects:</p>
+<pre><code>    //returns the distance between two objects
+    var dist = vector1.dist(vector2); 
+</code></pre>
+
+</li>
+</ul>
+<h2>Part VI: Use the splice method to remove boids from an array</h2>
+<ul>
+<li>
+<p>The <strong>splice()</strong> method changes the contents of an array by removing existing elements and/or adding new elements. </p>
+</li>
+<li>
+<p>Assume you have an array of boids named boids.  To remove an element from the arrray, you can use the following code:</p>
+<pre><code>    boids.splice(i, 1)// remove one element at index i
+</code></pre>
+
+</li>
+<li>
+<p>How do you know which boids to remove from the boids array?</p>
+</li>
+</ul>
+<hr />
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
