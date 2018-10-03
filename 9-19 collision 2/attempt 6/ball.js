@@ -18,6 +18,7 @@ function Ball(location, velocity, radius, col){
 	this.rad = radius;
 	this.col = col;
 	this.acc = createVector(0,.1);
+	this.ded = false
 
 	//  Methods  ++++++++++++++++++++++++++++++++++++++++++
 	this.run = function(){
@@ -27,6 +28,18 @@ function Ball(location, velocity, radius, col){
 	}
 
 	this.update = function(){
+		for(vari=balls.length-1; i>=0; i--){
+			
+			if(balls.dist > 50){
+				this.ded = true
+			balls.splice(i,1);	
+			}
+			
+			//revise
+			
+			
+		}
+		//balls.splice(i,1);
 		if(this !== ball){
 			//this.vel.x = this.vel.x + this.vel.x;
 			//this.vel.y = this.vel.y + this.vel.y;
@@ -41,7 +54,11 @@ function Ball(location, velocity, radius, col){
 				var steeringForce = p5.Vector.sub(this.loc, ball.loc );
 				steeringForce.normalize();
 				steeringForce.mult(.1);
-        this.vel.add(steeringForce);
+				this.vel.add(steeringForce);
+			if(d<50){
+				this.ded=true
+				//revise
+			}
 			}
 			this.vel.add(steeringForce);
 		}

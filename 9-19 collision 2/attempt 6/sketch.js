@@ -13,7 +13,7 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(getRandomColor());
-  loadBalls(200);
+  loadBalls(20);
   stroke(0);
   frameRate(30);
   var c1 = new Chaser (random(width), random(height),random(5,10),color(255));
@@ -21,7 +21,7 @@ function setup() {
 
 }
 function draw() {
-	background(20,20,20,100);
+	background(20,20,20);
 	ball.run();
 	//c1.run();
 	for(var i = 0; i < balls.length; i++){
@@ -35,7 +35,8 @@ function loadBalls(numBalls){
 		var vel = createVector(random(-2,2), random(-2,2));
 		var rad = random(5,10);
 		var col = getRandomColor();
-		balls.push(new Ball(loc, vel, rad, col));
+		var ded = false
+		balls.push(new Ball(loc, vel, rad, col, ded));
 	}
   var loc = createVector(width/2, height/2);
   var vel = createVector(random(-2,2), random(-2,2));
