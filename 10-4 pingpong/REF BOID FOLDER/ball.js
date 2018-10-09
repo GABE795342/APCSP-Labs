@@ -4,7 +4,7 @@
 **  Sept 5, 2018
 **  vector Attraction revision
 */
-
+ 
 // var balls and chaser on same file
 
 //2 vars for lerp function

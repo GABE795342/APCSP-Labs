@@ -8,7 +8,7 @@ var ball;
 var chaser;
 var c1;
 var distance;
-
+ 
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);

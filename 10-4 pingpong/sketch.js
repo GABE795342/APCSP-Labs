@@ -5,10 +5,9 @@
 **
 **
 */
+ 
 
 
-
-//  This is a comment
 //  The setup function function is called once when your program begins
 function setup() {
   var cnv = createCanvas(800, 800);
