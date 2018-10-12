@@ -17,7 +17,7 @@ function setup() {
   fill(200, 30, 150);
   loadBalls(10)
   paddle= new paddle(createVector(width/2, height/2, createVector(1,2), 25, color(255,0,0)))
-
+  frameRate(60);
 
 }
 
