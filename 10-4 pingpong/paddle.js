@@ -19,10 +19,9 @@ this.run = function(){
 }
 	
 	
-this.vel.limit(3)
-	this.loc.add(this.vel);
+//this.vel.limit(3)
+	//this.loc.add(this.vel);
 
-}
 this.checkEdges = function(){
 	if(this.loc.x < 0) this.vel.x = -this.vel.x;
 	if(this.loc.x > width) this.vel.x = -this.vel.x;

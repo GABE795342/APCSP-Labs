@@ -17,9 +17,9 @@ this.run = function(){
 	this.render();
 }
 	
-	
-this.vel.limit(3)
-this.loc.add(this.vel);
+	//un // text when loc and vel vector defined.
+//this.vel.limit(3)
+//this.loc.add(this.vel);
 
 
 this.checkEdges = function(){

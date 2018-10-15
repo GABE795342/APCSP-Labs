@@ -54,6 +54,10 @@ function removebob (ball){
 	
 }
 
+
+
+
+
 //taken from online example, does not seem to work
  for (var i = 0; i < balls.loc; i++) {
     for (var j = 0; j < chaser.loc; j++) {
