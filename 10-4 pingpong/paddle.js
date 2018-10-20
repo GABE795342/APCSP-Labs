@@ -14,12 +14,12 @@ function Paddle(location, col){
 	
 	
 }
-
-function draw() {
-	rect(
-
-	
-	}
+//integrate rectangle later
+//function draw() {
+	//rect(
+//
+	//
+	//}
 
 this.run = function(){
 	this.checkEdges();
