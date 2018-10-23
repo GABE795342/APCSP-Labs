@@ -10,17 +10,7 @@ function Ball(loc, vel, rad, col, sp){
   this.col = col;
   this.sp = sp;
 
-  
-  //call for other functions
-  this.run = function(){
-    this.checkEdges();
-    this.update();
-    this.render();
-    this.checkPaddle();
-  }
-
-  
-  //location updater happens 30 times/second by adding the velocity per second to location
+   //location updater happens 30 times/second by adding the velocity per second to location
   this.update = function(){
     this.loc.x = this.loc.x + this.vel.x;
     this.loc.y = this.loc.y + this.vel.y;
@@ -35,6 +25,16 @@ function Ball(loc, vel, rad, col, sp){
     if(this.loc.y < 0) this.vel.y = -this.vel.y;
     if(this.loc.y > height) this.vel.y = -this.vel.y;
   }
+
+
+  //call for other functions
+  this.run = function(){
+    this.checkEdges();
+    this.update();
+    this.render();
+    this.checkPaddle();
+  }
+
 
 
   this.render = function(){
