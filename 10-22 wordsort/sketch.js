@@ -5,6 +5,25 @@
 */
 
 
+
+var randostring
+function preload() {
+  randostribg = loadStrings('10-22 wordsort/txtstring.txt');
+
+}
+
+
+
+
+
+
+
+
+/*
+
+//code for a number sorting scheme
+
+
 var randonumbs; //random number generator scheme
 var numarray = []; //number array
 var right; // right value for bubble comparitor
@@ -34,3 +53,4 @@ if(sorted = 0){
 		var right = var medium;
 	}
  }
+ */
