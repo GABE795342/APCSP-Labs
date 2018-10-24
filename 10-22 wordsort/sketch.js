@@ -6,12 +6,17 @@
 
 
 
-var randostring
+var txt
 function preload() {
-  randostribg = loadStrings('10-22 wordsort/txtstring.txt');
+  txt = loadStrings('txtstring.txt');
 
 }
-
+function draw(){
+	console.log(txt);
+	
+	
+	
+}
 
 
 
