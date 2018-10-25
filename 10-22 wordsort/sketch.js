@@ -4,7 +4,22 @@
 **
 */
 
+var start; 
 
+var wordarray = []; //word array?
+var right; // right value for bubble comparitor
+var left; //left value for bubble for comparitor
+var medium; //medium for moving the two values
+var sorted; //flag var indicating if numbers have been sorted, 1=true 0=false
+
+function setup(){
+	start=millis();
+	txtstring(txt);
+	sorted=millis();
+	
+	
+	
+}
 
 var txt
 function preload() {
@@ -14,9 +29,17 @@ function preload() {
 function draw(){
 	console.log(txt);
 	
-	
-	
 }
+
+ //sorting least to greatest
+if(sorted = 0){
+	if(left > right){ //if left greater than right
+		medium = left;
+		left = right;
+		right = medium;
+	}
+ }
+
 
 
 
