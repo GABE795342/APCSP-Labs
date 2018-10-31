@@ -2,6 +2,12 @@
 var numBars;
 var Bars = [];
 
+var right; // right value for bubble comparitor
+var left; //left value for bubble for comparitor
+var medium; //medium for moving the two values
+var sorted; //flag var indicating if numbers have been sorted, 1=true 0=false
+
+
 
 //  This is a comment
 //  The setup function function is called once when your program begins
@@ -53,6 +59,16 @@ function loadBars(numBars){
 
 
 function myBubbleSort(){
+	var length = Bars.js
+	
+	
+	
+		if(left > right){ //if left greater than right
+		medium = left;
+		left = right;
+		right = medium;
+	}
+	
 	
 	
 	
