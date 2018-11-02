@@ -4,6 +4,53 @@
 **
 */
 
+var start; 
+
+var wordarray = []; //word array?
+var right; // right value for bubble comparitor
+var left; //left value for bubble for comparitor
+var medium; //medium for moving the two values
+var sorted; //flag var indicating if numbers have been sorted, 1=true 0=false
+
+function setup(){
+	start=millis();
+	txtstring(txt);
+	sorted=millis();
+	
+	
+	
+}
+
+var txt
+function preload() {
+  txt = loadStrings('txtstring.txt');
+
+}
+function draw(){
+	console.log(txt);
+	
+}
+
+ //sorting least to greatest
+if(sorted = 0){
+	if(left > right){ //if left greater than right
+		medium = left;
+		left = right;
+		right = medium;
+	}
+ }
+
+
+
+
+
+
+
+
+/*
+
+//code for a number sorting scheme
+
 
 var randonumbs; //random number generator scheme
 var numarray = []; //number array
@@ -49,6 +96,7 @@ function mybubblesort(txt){
 		
 		}
 	}
+<<<<<<< HEAD
 	
 	
 	
@@ -60,3 +108,7 @@ function mybubblesort(txt){
 		//var right = var medium;
 	//}
  //}
+=======
+ }
+ */
+>>>>>>> 550f02a8dc1e82370c5d8a964fe5cfe41a90398b
