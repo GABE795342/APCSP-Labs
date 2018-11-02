@@ -1,12 +1,20 @@
 
-//  This is a comment
-//  The setup function function is called once when your program begins
-function setup() {
-  var cnv = createCanvas(800, 800);
-  cnv.position((windowWidth-width)/2, 30);
-  background(5, 5, 5);
-  fill(200, 30, 150);
+// https://docs.google.com/presentation/d/1UnMJ2NWzQ4_Qo7lftdEj7KPZgQaapINQcbj1Z3Vjps0/edit?usp=sharing
 
+var romeweather;
+
+
+
+function preload(){
+	romeweather = loadJSON("romeweatherformatted.json");
+	
+	
+}
+
+function setup() {
+	//example code from slides
+	//data.countrydata[3].males
+	romeweather.results[3].rome //?
 
 }
 
