@@ -6,7 +6,7 @@ var spacemen;
 
 
 function preload(){
-	spacemen = loadJSON("cosmonauts.json");
+	spacemen = loadJSON('cosmonauts.json');
 	
 	
 }
