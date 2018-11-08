@@ -10,7 +10,7 @@ var right; // right value for bubble comparitor
 var left; //left value for bubble for comparitor
 var medium; //medium for moving the two values
 var sorted; //flag var indicating if numbers have been sorted, 1=true 0=false //unused
-var txt
+var txt;
 function preload() {
   txt = loadStrings('txtstring.txt');
 
@@ -45,15 +45,7 @@ function myBubblesort(txt){
 				txt[b] = txt[b+1];
 				txt[b+1] = medium;
 				
-				
-				
 			}
-			
-			
-			
-		
-		
-		
 		}
 	}
 	
@@ -122,7 +114,6 @@ function mybubblesort(txt){
 		
 		}
 	}
-<<<<<<< HEAD
 	
 	
 	
@@ -134,7 +125,7 @@ function mybubblesort(txt){
 		//var right = var medium;
 	//}
  //}
-=======
+
  }
  */
 
