@@ -3,6 +3,10 @@
 //  The setup function function is called once when your program begins
 var snake;
 
+//position array for nonlinear movement (blocky), certain number of times a second moved, determined by score
+var position = []; //position of every block of snake
+var score; //score, snake speed increases with higher score
+var hertz; //block movements per second
 
 
 
@@ -21,4 +25,17 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
 
+}
+
+
+//position incremented one position in position array for every 
+function movesnake(){
+	
+	
+	
+	
+	
+	
+	
+	
 }
