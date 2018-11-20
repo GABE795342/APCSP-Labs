@@ -7,10 +7,7 @@ var snake;
 var position = []; //position of every block of snake
 var score; //score, snake speed increases with higher score
 var hertz; //block movements per second
-
-
-
-
+var activeround // high=paused low=active
 
 
 function setup() {
@@ -28,9 +25,39 @@ function draw() {
 }
 
 
-//position incremented one position in position array for every 
+//position incremented one position in position array for every hertz tick
 function movesnake(){
 	
+	
+}
+
+function keyPressed(){
+	if(keyCode == 32){
+		//32 value is space
+		//pause game
+		
+		
+	}
+	if(keyCode === 40){
+		//arrow down
+		
+		
+	}
+	if(keyCode === 38){
+		//arrow up
+		
+		
+	}
+	if(keyCode === 39){
+		//arrow right
+		
+		
+	}
+	if(keyCode === 37){
+		//arrow left
+		
+		
+	}
 	
 	
 	
