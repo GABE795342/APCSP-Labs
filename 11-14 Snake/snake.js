@@ -7,6 +7,6 @@ function Snake(loc, vel){
 	
 	
 	
-	
+	rect
 	
 }
