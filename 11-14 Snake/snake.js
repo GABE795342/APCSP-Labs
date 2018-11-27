@@ -7,6 +7,6 @@ function Snake(loc, vel){
 	
 	
 	
-	rect
+	rect(position.width, position.length, 10, 10);
 	
 }

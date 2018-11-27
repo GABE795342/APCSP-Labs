@@ -9,7 +9,8 @@ var score; //score, snake speed increases with higher score
 var hertz; //milliseconds between game step
 var activeround // high=paused low=active
 var snakemovement //1=up 2=down 3=left 4=right
-
+var score = 0;
+var snake = [];
 
 var positionmiddlevalueswapper //position middle value swapper for moving the snake bit by bit
 
@@ -17,10 +18,10 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
+ // var snake = new snake(loc, vel);
   //fill(200, 30, 150);
-
-
-
+  numSnake = 1;
+  loadSnake(numSnake);
 }
 
 //  The draw function is called @ 30 fps
@@ -28,12 +29,26 @@ function draw() {
 	keyPressed();
 	movementintegerclock();
 	movesnake();
-
+	snake.run();
 }
 
 function movementintegerclock(){
 	var hertz = 500
 	setInterval(movesnake, hertz)
+}
+
+function loadSnakeloadSnake(){ //snake initial loader
+	var loc = createVector(random(0,790),random(0,790))
+	var vel = createVector(random(-15, 15), random(-15, 15));
+	
+	
+	
+	
+	var b = new Snake(loc, vel);
+	snake.push(b);
+	
+	
+	
 	
 	
 	
@@ -42,11 +57,18 @@ function movementintegerclock(){
 
 
 
-
-
 //position incremented one position in position array for every hertz tick
-function movesnake(){
+function movesnake(){ //function to load and move snake
 	//squares to be moved on 80x80 grid of possible locations based on upper left corner location, 10x10 pixel food and snake elements.
+	
+	
+	//old code for reference pushing to array
+	//var b = new Ball(loc, vel, rad, col, sp);
+   // Balls.push(b);
+	var b = new Snake(loc, vel);
+	snake.push(b);
+	
+	
 	
 	
 	
@@ -55,10 +77,7 @@ function movesnake(){
 	for (var i = 0; i < position.length; i ++){
 		position[i] = position[i+1]
 		
-		
-		
-		
-		
+
 	
 		
 	}
