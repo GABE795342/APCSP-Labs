@@ -1,12 +1,12 @@
 //snake snake constructor
 
 
-function Snake(loc, vel){
+function snake(loc, vel, dir){ //location, velocity, and unused direction
 	
 	
 	
 	
 	
-	rect(position.width, position.length, 10, 10);
+	rect(loc.width, loc.height, 10, 10);
 	
 }
