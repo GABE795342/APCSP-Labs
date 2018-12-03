@@ -2,7 +2,8 @@
 
 
 function snake(loc, vel, dir){ //location, velocity, and unused direction
-	
+	snake.loc = 0;
+	snake.vel = 0;
 	
 	
 	
