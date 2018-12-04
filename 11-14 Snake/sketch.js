@@ -25,7 +25,7 @@ function setup() {
   var loc = createVector(random(0,800),random(0,800));
   var vel = 0;
   var dir = random(1,4); //up=1, down=2, left=3, right=4
-  Snake = new Snake(loc, vel, dir);
+  snake = new snake(loc, vel, dir);
 }
 //  The draw function is called @ 30 fps
 function draw() {
@@ -34,6 +34,24 @@ function draw() {
 	movesnake();
 	snake.run();
 }
+
+//moved to sketch file from snake.js
+function snake(loc, vel, dir){ //location, velocity, and unused direction
+	snake.loc = 0;
+	snake.vel = 0;
+	snake.vel = snakemovement;
+	
+	
+	
+	rect(loc.width, loc.height, 10, 10);
+	
+}
+
+
+
+
+
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //unused clock integer variable 
 //function movementintegerclock(){
@@ -75,27 +93,26 @@ function keyPressed(){
 	if(keyCode === 40){
 		//arrow down
 		var snakemovement = 2;
-		snake.vel = createVector(0,20);
-		snake.loc.add(snake.vel);
+		//snake.vel = createVector(0,20);
+		//snake.loc.add(snake.vel);
 	}
 	if(keyCode === 38){
 		//arrow up
 		var snakemovement = 1;
-		snake.vel = createVector(0,-20);
-		snake.loc.add(snake.vel);
+		//snake.vel = createVector(0,-20);
+		//snake.loc.add(snake.vel);
 	}
 	if(keyCode === 39){
 		//arrow right
 		var snakemovement = 4;
-		snake.vel = createVector(20,0);
-		snake.loc.add(snake.vel);		
+		//snake.vel = createVector(20,0);
+		//snake.loc.add(snake.vel);		
 	}
 	if(keyCode === 37){
 		//arrow left
 		var snakemovement = 3;
-		snake.vel = createVector(-20, 0);
-		snake.loc.add(snake.vel);		
+		//snake.vel = createVector(-20, 0);
+		//snake.loc.add(snake.vel);		
 	}
-	
-
+	console.log(snakemovement);
 }
