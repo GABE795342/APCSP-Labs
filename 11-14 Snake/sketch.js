@@ -1,5 +1,6 @@
 //SNAKE SKETCH FILE
 var snake;
+var food; 
 //position array for non-linear movement (blocky), certain number of times a second moved, determined by score
 var position = []; //position of every block of snake
 var score; //score, snake speed increases with higher score
@@ -12,7 +13,7 @@ var positionmiddlevalueswapper //position middle value swapper for moving the sn
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  background(5, 5, 5);
+  background(0, 0, 100);
   //var snake = new snake(loc, vel);
   //fill(200, 30, 150);
   //numSnake = 1;
@@ -23,35 +24,45 @@ function setup() {
 //	  var vel = 0  
 //  }
   var loc = createVector(random(0,800),random(0,800));
+  var lcc = createVector(random(0,800),random(0,800));
   var vel = 0;
   var dir = random(1,4); //up=1, down=2, left=3, right=4
+  var liv = 
+  food = new food(lcc, liv);
   snake = new snake(loc, vel, dir);
 }
 //  The draw function is called @ 30 fps
 function draw() {
 	keyPressed();
-//	movementintegerclock();
+//	//movementintegerclock();
 	movesnake();
-	snake.run();
+	
+//snake.run();
+//food.run();
 }
+function initialloadscheme(){
+	var a = new snake(loc, vel, dir);
+	for(var 
+	
+	
+	
+	
+	
+	
+}
+
 
 //moved to sketch file from snake.js
 function snake(loc, vel, dir){ //location, velocity, and unused direction
 	snake.loc = 0;
 	snake.vel = 0;
 	snake.vel = snakemovement;
-	
-	
-	
 	rect(loc.width, loc.height, 10, 10);
-	
 }
-
-
-
-
-
-
+function food(loc, liv){ //location, //liv= uneaten or eaten food
+	snake.loc = createVector(random(0,790),random(0,790));
+	rect(loc.width, loc.height, 10, 10);
+}
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //unused clock integer variable 
 //function movementintegerclock(){
