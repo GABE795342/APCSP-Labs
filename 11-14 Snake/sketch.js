@@ -1,5 +1,5 @@
 //SNAKE SKETCH FILE
-var snake;
+var snake = [];
 var food; 
 //position array for non-linear movement (blocky), certain number of times a second moved, determined by score
 var position = []; //position of every block of snake
@@ -36,27 +36,19 @@ function draw() {
 	keyPressed();
 //	//movementintegerclock();
 	movesnake();
-	
 //snake.run();
 //food.run();
 }
 function initialloadscheme(){
 	var a = new snake(loc, vel, dir);
-	for(var 
-	
-	
-	
-	
-	
-	
+	for(var b = 0; b < snake.length; b++){	
+	}
 }
-
-
 //moved to sketch file from snake.js
-function snake(loc, vel, dir){ //location, velocity, and unused direction
-	snake.loc = 0;
-	snake.vel = 0;
-	snake.vel = snakemovement;
+function snake(locxval, locyval, dir){ //location, velocity, and unused direction
+	snake.locxval = 0;
+	snake.locyvel = 0;
+	snake.dir = snakemovement;
 	rect(loc.width, loc.height, 10, 10);
 }
 function food(loc, liv){ //location, //liv= uneaten or eaten food
