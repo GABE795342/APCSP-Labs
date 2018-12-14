@@ -10,6 +10,10 @@ var snakemovement//directional movement of snake //1=up 2=down 3=left 4=right
 var score = 0;
 //var snake = [];//experimental use of array//*(unnecessary due to there only being one used element)
 var positionmiddlevalueswapper //position middle value swapper for moving the snake bit by bit
+
+
+
+
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -23,6 +27,9 @@ function setup() {
 //  } else if (activeround = 1){ //mechanism to stop snake when paused 
 //	  var vel = 0  
 //  }
+
+
+
   var loc = createVector(random(0,800),random(0,800));
   var lcc = createVector(random(0,800),random(0,800));
   var vel = 0;
@@ -31,6 +38,9 @@ function setup() {
   food = new food(lcc, liv);
   snake = new snake(loc, vel, dir);
 }
+
+
+
 //  The draw function is called @ 30 fps
 function draw() {
 	keyPressed();
@@ -39,11 +49,15 @@ function draw() {
 //snake.run();
 //food.run();
 }
+
 function initialloadscheme(){
 	var a = new snake(loc, vel, dir);
 	for(var b = 0; b < snake.length; b++){	
 	}
 }
+
+
+
 //moved to sketch file from snake.js
 function snake(locxval, locyval, dir){ //location, velocity, and unused direction
 	snake.locxval = 0;
@@ -51,10 +65,13 @@ function snake(locxval, locyval, dir){ //location, velocity, and unused directio
 	snake.dir = snakemovement;
 	rect(loc.width, loc.height, 10, 10);
 }
+
 function food(loc, liv){ //location, //liv= uneaten or eaten food
 	snake.loc = createVector(random(0,790),random(0,790));
 	rect(loc.width, loc.height, 10, 10);
 }
+
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //unused clock integer variable 
 //function movementintegerclock(){
@@ -70,6 +87,8 @@ function food(loc, liv){ //location, //liv= uneaten or eaten food
 //}
 //position incremented one position in position array for every hertz tick//UNUSED
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 function movesnake(){ //function to load and move snake
 	//squares to be moved on 80x80 grid of possible locations based on upper left corner location, 10x10 pixel food and snake elements.
 	//old code for reference pushing to array
@@ -82,6 +101,12 @@ function movesnake(){ //function to load and move snake
 		position[i] = position[i+1]
 	}
 }
+
+
+
+
+
+
 function keyPressed(){
 //	if(keyCode == 32){
 //		//32 value is space
@@ -92,30 +117,30 @@ function keyPressed(){
 //		//80 value is p
 //		//unpause game
 //		var activeround = 0
-//	}
+//	} 
 	if(keyCode === 40){
 		//arrow down
 		var snakemovement = 2;
 		//snake.vel = createVector(0,20);
 		//snake.loc.add(snake.vel);
-	}
+	}           							
 	if(keyCode === 38){
 		//arrow up
 		var snakemovement = 1;
 		//snake.vel = createVector(0,-20);
 		//snake.loc.add(snake.vel);
-	}
+	} 						
 	if(keyCode === 39){
 		//arrow right
 		var snakemovement = 4;
 		//snake.vel = createVector(20,0);
 		//snake.loc.add(snake.vel);		
-	}
+	} 
 	if(keyCode === 37){
 		//arrow left
 		var snakemovement = 3;
 		//snake.vel = createVector(-20, 0);
 		//snake.loc.add(snake.vel);		
-	}
+	} 
 	console.log(snakemovement);
-}
+}  
