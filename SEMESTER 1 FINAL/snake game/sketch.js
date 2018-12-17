@@ -78,7 +78,7 @@ function locUPDATERfunction(){
       food.splice(i, 1);
       loadFood(1);
       snake.segments.push(createVector(0, 0));
-      score = score + 10
+      score = score + 10;
 
     }
   }
